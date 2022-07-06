@@ -1,0 +1,2 @@
+src/scss/base/_reset.scss
+src/scss/vendors/**/*.scss
