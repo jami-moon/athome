@@ -1,5 +1,11 @@
-body {
+h2 {
   color: red;
+}
+
+h1 {
+  color: blue;
+  margin-top: 50px;
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
