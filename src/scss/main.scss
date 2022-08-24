@@ -1,8 +1,46 @@
-@import "./header/header";
+@import "./reset";
 
-h1 {
-	box-sizing: border-box;
-	display: block;
-	margin-top: 50px;
-	color: blue;
+.container {
+    overflow: hidden;
+    position: relative;
+
+    width: 10000px;
+    background-color: rgb(212,212,212);
+
+    .box {
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        transition: transform 0.5s;
+
+        &.is-active {
+            transform: translate3d(0,0,0);
+        }
+
+        &__1 {
+            left: 0;
+            background-color: red;
+            transform: translate3d(calc(100% - 200px),0,0);
+        }
+
+        &__2 {
+            left: 50px;
+            background-color: blue;
+            transform: translate3d(calc(100% - 200px),0,0);
+        }
+
+        &__3 {
+            left: 100px;
+            background-color: yellow;
+            transform: translate3d(calc(100% - 200px),0,0);
+        }
+
+        &__4 {
+            left: 150px;
+            background-color: green;
+            transform: translate3d(calc(100% - 200px),0,0);
+        }
+        
+    }
 }

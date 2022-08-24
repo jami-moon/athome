@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel sass build server",
-    "server": "webpack-dev-server --open --mode development --hot ", 
-    "build": "webpack",
+    "start": "npm-run-all --parallel sass build",
+    "server": "webpack-dev-server --open --mode development", 
+    "build": "webpack serve --open --mode development",
     "sass": "sass --style=expanded ./src/scss/main.scss  ./src/css/style.css",
     "stylelint": "npx stylelint **/*.scss --fix"
   },
