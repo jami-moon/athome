@@ -1,8 +1,6 @@
 {
-	"extends": ["stylelint-config-standard", "stylelint-config-standard-scss"],
-	"plugins": [
-		"stylelint-order"
-	],
+	"extends": [],
+	"plugins": ["stylelint-order"],
 	"rules": {
 		"indentation": "tab",
 		"selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
@@ -10,9 +8,7 @@
 		"declaration-block-no-duplicate-properties": [
 			true,
 			{
-				"ignore": [
-					"consecutive-duplicates-with-different-values"
-				]
+				"ignore": ["consecutive-duplicates-with-different-values"]
 			}
 		],
 		"function-calc-no-unspaced-operator": true,
@@ -82,11 +78,7 @@
 		"value-list-comma-space-before": "never",
 		"value-list-max-empty-lines": 0,
 		"no-eol-whitespace": true,
-		"order/order": [
-			"dollar-variables",
-			"custom-properties",
-			"at-rules"
-		],
+		"order/order": ["dollar-variables", "custom-properties", "at-rules"],
 		"order/properties-order": [
 			[
 				{
@@ -400,11 +392,7 @@
 					"groupName": "SASS Inheritance",
 					"emptyLineBefore": "always",
 					"noEmptyLineBetween": true,
-					"properties": [
-						"@include",
-						"@mixin",
-						"@extend"
-					]
+					"properties": ["@include", "@mixin", "@extend"]
 				}
 			],
 			{

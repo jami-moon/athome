@@ -1,24 +1,28 @@
 import "./scss/main.scss";
 
-let totalWidth = 0;
-let totalHeight = 0;
+const container = document.querySelector(".container");
+let moveMax = (g - (window.innerWidth / 2)) * -1; 
+let containerPosition = 0;
 
-// 가로 스크롤 될 수 있게 너비 늘려주기
-// 애플 사이트에서 했던 거 이용해서 스크롤 정도에 맞게 트랜스폼
+container.addEventListener("wheel", (e) => {
+	e.preventDefault;
 
-const html = document.getElementsByTagName('html');
-const body = document.getElementsByTagName('body');
+	console.log(`${e.deltaY}`);
+    console.log(containerPosition);
+	moveSection(e.deltaY);
+});
 
-html.style.height = window.innerHeight;
-body.style.height = window.innerHeight;
+function moveSection(amount) {
+	containerPosition -= amount;
+	if (6 < moveMax) {
+        containerPosition = moveMax;
+        return;
+    } else if( containerPosition > 0) {
+        containerPosition = 0;
+        return
+    }
 
-const boxEl = document.querySelectorAll('.box')
+    container.style.transform = `translateX(${containerPosition}px)`;
+}
 
-// boxEl.forEach(function(el,idx){
-//     el.addEventListener('wheel', (e) => {
-//         e.preventDefault;
-//         if(e.deltaY > 0) {
-
-//         }
-//     })
-// })
+6

@@ -2,11 +2,11 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const StylelintWebpackPlugin = require("stylelint-webpack-plugin");
 
 module.exports = {
 	context: __dirname,
 	entry: "./src/index.js",
+
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		filename: "main.js",
@@ -23,22 +23,20 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin (),
 		new HtmlWebpackPlugin({
+			filename: 'index.html',
 			template: "./src/html/index.html",
+			chunks: ['main']
 		}),
 		new MiniCssExtractPlugin({
 			filename: "./style.css",
 		}),
-		new StylelintWebpackPlugin({
-			configFile: ".stylelintrc",
-			files: "./**.*.scss",
-			fix: true,
-		}),
 	],
 	devServer: {
+		watchFiles: ["./src/html/*"], 
+		port: 8020,
 		static: {
 			directory: path.resolve(__dirname, "dist"),
 		},
-		port: 8020,
 	},
 	devtool: 'source-map',
     mode: 'production'

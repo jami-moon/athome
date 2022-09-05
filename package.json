@@ -1,33 +1,35 @@
 {
-  "name": "athome",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "npm-run-all --parallel sass build",
-    "server": "webpack-dev-server --open --mode development", 
-    "build": "webpack serve --open --mode development",
-    "sass": "sass --style=expanded ./src/scss/main.scss  ./src/css/style.css",
-    "stylelint": "npx stylelint **/*.scss --fix"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "clean-webpack-plugin": "^4.0.0",
-    "css-loader": "^6.7.1",
-    "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "^2.6.1",
-    "npm-run-all": "^4.1.5",
-    "sass": "^1.53.0",
-    "sass-loader": "^13.0.2",
-    "style-loader": "^3.3.1",
-    "stylelint": "^14.9.1",
-    "stylelint-config-standard": "^28.0.0",
-    "stylelint-config-standard-scss": "^5.0.0",
-    "stylelint-order": "^5.0.0",
-    "stylelint-webpack-plugin": "^3.3.0",
-    "webpack": "^5.73.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.10.0"
-  }
+	"name": "athome",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"watch": {
+		"patterns": [
+			"src"
+		]
+	},
+	"scripts": {
+		"start": "npm-run-all --parallel stylelint build watch:scss",
+		"build": "webpack serve --open --mode development",
+		"stylelint": "npx stylelint **/*.scss --fix",
+		"watch:scss": "onchange 'src/scss/*.scss' -- npm run stylelint"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"clean-webpack-plugin": "^4.0.0",
+		"css-loader": "^6.7.1",
+		"html-webpack-plugin": "^5.5.0",
+		"mini-css-extract-plugin": "^2.6.1",
+		"npm-run-all": "^4.1.5",
+		"onchange": "^7.1.0",
+		"sass": "^1.53.0",
+		"sass-loader": "^13.0.2",
+		"style-loader": "^3.3.1",
+		"stylelint": "^14.9.1",
+		"stylelint-order": "^5.0.0",
+		"webpack": "^5.73.0",
+		"webpack-cli": "^4.10.0",
+		"webpack-dev-server": "^4.10.0"
+	}
 }

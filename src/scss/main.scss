@@ -1,46 +1,72 @@
 @import "./reset";
 
+* { box-sizing: border-box; }
+
+body {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 50px;
+	height: 100vh;
+
+	position: fixed;
+
+	background-color: rgb(212 212 212);
+	border-right: 1px solid black;
+
+	.title {
+		font-size: 40px;
+
+		writing-mode: vertical-lr;
+	}
+}
+
 .container {
-    overflow: hidden;
-    position: relative;
+	width: 10000px;
+	height: 100vh;
+	overflow: hidden;
 
-    width: 10000px;
-    background-color: rgb(212,212,212);
+	position: fixed;
+	left: 50px;
 
-    .box {
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        width: 100vw;
-        transition: transform 0.5s;
+	background-color: rgb(212 212 212);
 
-        &.is-active {
-            transform: translate3d(0,0,0);
-        }
+	white-space: nowrap;
 
-        &__1 {
-            left: 0;
-            background-color: red;
-            transform: translate3d(calc(100% - 200px),0,0);
-        }
+	.section {
+		width: 100vw;
+		height: 100vh;
 
-        &__2 {
-            left: 50px;
-            background-color: blue;
-            transform: translate3d(calc(100% - 200px),0,0);
-        }
+		position: absolute;
+		top: 0;
 
-        &__3 {
-            left: 100px;
-            background-color: yellow;
-            transform: translate3d(calc(100% - 200px),0,0);
-        }
+		transition: transform .5s;
 
-        &__4 {
-            left: 150px;
-            background-color: green;
-            transform: translate3d(calc(100% - 200px),0,0);
-        }
-        
-    }
+		&.is-active {
+			transform: translate3d(0,0,0);
+		}
+
+		&__1 {
+			left: 50px;
+
+			background-color: pink;
+
+			transform: translate3d(calc(100% - 200px),0,0);
+		}
+
+		&__2 {
+			left: 100px;
+
+			background-color: green;
+
+			transform: translate3d(calc(100% - 200px),0,0);
+		}
+	}
 }
